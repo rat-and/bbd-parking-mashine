@@ -3,3 +3,6 @@
 BDDWorkshopInit.iml
 poetry.lock
 test_api/__pycache__/*
+
+reports-behave
+reports-pytest

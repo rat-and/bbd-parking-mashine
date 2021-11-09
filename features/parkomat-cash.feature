@@ -1,3 +1,4 @@
+# Created by ${USER} at ${DATE}
 Feature: Parkomat Cash
 
 User story for this feature:
@@ -12,7 +13,7 @@ Parkometr/Parkomat
 pon-pt w godz. 8:00 - 20:00 sob w godz. 8:00 - 18:00
 **Weekendy nie są obsługiwane
 
- @park-cash
+ @park_cash
   Scenario Outline: Not enough money to buy a ticket
     Given money amount is <money_amount>
     And current time is <current_time>
@@ -28,7 +29,8 @@ pon-pt w godz. 8:00 - 20:00 sob w godz. 8:00 - 18:00
       |1.00       |2021-11-08T19:50:00|Not enough money   |
       |1.00       |2021-11-08T23:50:00|Not enough money   |
 
-  @park-cash
+
+  @park_cash
   Scenario Outline: Compute end parking timestamp
     Given money amount is <money_amount>
     And current time is <current_time>
