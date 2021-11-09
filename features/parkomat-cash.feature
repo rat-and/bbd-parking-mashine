@@ -2,7 +2,8 @@
 Feature: Parkomat Cash
 
 User story for this feature:
-Parkometr/Parkomat
+John chce kupić bilet do Parkometru/Parkomatu. Wykupienie kolejngo interwalu nastepuje dopiero po wplaceniu wymaganej
+kwoty. Niewykorzystany czas z jednego dnia przechodzi na dzien nastepny.
 
     15 min:           1,70 zł
     1 godz:           7,00 zł
@@ -11,7 +12,8 @@ Parkometr/Parkomat
     Każda następna:   7,00 zł
 
 pon-pt w godz. 8:00 - 20:00 sob w godz. 8:00 - 18:00
-**Weekendy nie są obsługiwane
+**Weekendy nie są obsługiwane #TODO
+
 
  @park_cash
   Scenario Outline: Not enough money to buy a ticket
@@ -111,3 +113,11 @@ pon-pt w godz. 8:00 - 20:00 sob w godz. 8:00 - 18:00
       |114.30     |2021-11-08T19:45:00|2021-11-10T10:45:00|
       |114.30     |2021-11-08T19:50:00|2021-11-10T10:50:00|
       |114.30     |2021-11-08T23:50:00|2021-11-10T11:00:00|
+      #####################################################
+      ###           Added after coverage test           ###
+      #####################################################
+#      |1.70       |2021-11-08T19:20:00|2021-11-08T19:35:00|
+#      |26.66      |2021-11-08T18:00:00|2021-11-09T09:00:00|
+#      |29.30      |2021-11-08T18:00:00|2021-11-09T10:00:00|
+#      |36.40      |2021-11-08T18:00:00|2021-11-09T11:00:00|
+#      |43.50      |2021-11-08T18:00:00|2021-11-09T12:00:00|

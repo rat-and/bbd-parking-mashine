@@ -24,7 +24,7 @@ def step_impl(context):
 
 @then(u'result is {result}')
 def step_impl(context, result):
-    assert context.calculated_time == datetime.fromisoformat(result)
+    assert context.calculated_time == datetime.fromisoformat(result), context.calculated_time
 
 
 @then(u'error message is {result}')
