@@ -1,4 +1,3 @@
-from behave import *
 from datetime import datetime, timedelta
 
 
@@ -18,7 +17,6 @@ def parking_end_time(money_amount: float, current_time: datetime, day_offset=Fal
     price_list = [1.70, 7.00, 7.40, 7.90, 7.00]
     minute_offset = 0
     hour_offset = 0
-    print(day_offset)
 
     if money_amount < min(price_list):
         # If function call by recursion day offset is included in current_date
@@ -109,31 +107,3 @@ def parking_end_time(money_amount: float, current_time: datetime, day_offset=Fal
         return parking_end_time(money_amount,
                                 current_time.replace(hour=8, minute=0),
                                 day_offset)
-
-
-@given(u'money amount is {money_amount}')
-def step_impl(context, money_amount):
-    context.money_amount = float(money_amount)
-
-
-@given(u'current time is {current_time}')
-def step_impl(context, current_time):
-    context.current_time = datetime.fromisoformat(current_time)
-
-
-@when(u'end time is calculated')
-def step_impl(context):
-    try:
-        context.calculated_time = parking_end_time(context.money_amount, context.current_time)
-    except ValueError as e:
-        context.exception = e
-
-
-@then(u'result is {result}')
-def step_impl(context, result):
-    assert context.calculated_time == datetime.fromisoformat(result)
-
-
-@then(u'error message is {result}')
-def step_impl(context, result):
-    assert result in str(context.exception)

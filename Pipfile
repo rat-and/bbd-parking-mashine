@@ -10,6 +10,9 @@ flask = "==1.1.2"
 behave = "==1.2.6"
 pytest = "==6.2.2"
 requests = "==2.25.1"
+pytest-bdd = "*"
+pytest-html = "*"
+pytest-cov = "*"
 
 [requires]
-python_full_version = "3.8"
+python_full_version = "3.9"

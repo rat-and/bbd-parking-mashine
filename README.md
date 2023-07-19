@@ -26,7 +26,11 @@
 
 # Testowanie konfiguracji
 
-1. W głównym katalogu, uruchom: `pipenv run behave --tags=@park-cash`.
+1. W głównym katalogu, uruchom:
+```
+pipenv run behave --tags=@park_cash --junit --junit-directory reports-behave
+pipenv run pytest tests/functional/test_parkomat_cash.py --html=reports-pytest/report.html
+```
 
 2. Oczekiwanym rezultatem jest:
 
